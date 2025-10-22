@@ -1,0 +1,11 @@
+{
+  "name": "csi_task2_backend",
+  "version": "1.0.0",
+  "description": "Task_2 making authorisation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NISHANT SINGH",
+  "license": "ISC"
+}
