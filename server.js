@@ -5,6 +5,11 @@ import dotenv from 'dotenv'
  dotenv.config({
     path: '.env'
 })
+
+import authRoutes from './Src/routes/authRoutes.js'
+app.use(express.json());
+app.use('/api/auth', authRoutes);
+
 import connectDB from './Src/db/index.js'
 connectDB()
     .then(() => {
@@ -26,10 +31,3 @@ app.get('/api',(req,res) => {
 }
 )
 
-// app.post('/api/auth/register',(req,res)=>{
-//     try {
-        
-//     } catch (error) {
-        
-//     }
-// })
