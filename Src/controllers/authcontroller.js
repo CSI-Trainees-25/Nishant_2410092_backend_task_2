@@ -1,7 +1,8 @@
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken'
 import User from '../models/user.models.js'
-import User from "../models/user.models.js";
+import { sendEmail } from '../utils/sendmail.js';
+
 
 import { generateOTP, hashOTP } from '../utils/otp.js'
 export const register = async (req, res) => {
@@ -25,9 +26,12 @@ export const register = async (req, res) => {
             name,
             email,
             password: hashpassword,
-            isVerified: false
-        })
+            otpHash,
+            otpExpiry,
+            isVerified: false,
+        });
         await user.save()
+          await sendEmail(email, 'Your OTP Code',`Your verification OTP is ${otp}` )
         res.status(201).json({ message: 'OTP sent to your e_mail. Please verify for login.' })
 
     } catch (error) {
