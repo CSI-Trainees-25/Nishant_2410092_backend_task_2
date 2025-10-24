@@ -25,3 +25,11 @@ app.get('/api',(req,res) => {
    res.send('hello task_2  Authentication System ')
 }
 )
+
+// app.post('/api/auth/register',(req,res)=>{
+//     try {
+        
+//     } catch (error) {
+        
+//     }
+// })

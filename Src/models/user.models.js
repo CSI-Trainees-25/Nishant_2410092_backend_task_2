@@ -6,7 +6,7 @@ const userSchema = new  mongoose.Schema({
         required: true,
     },
     email: {
-        type: true,
+        type: String,
         required: true,
         unique: true
     },
@@ -14,6 +14,7 @@ const userSchema = new  mongoose.Schema({
         type: String,
         required: true,
     },
+
     isVerified: {
         type: Boolean,
         default: false
